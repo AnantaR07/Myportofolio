@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Ananta R.</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      #about,
+      #projects,
+      #contact {
+        scroll-margin-top: 100px;
+      }
+
+      /* Gradient animasi background */
+      .animated-gradient {
+        background: linear-gradient(-45deg, #ff6ec4, #7873f5, #42e695, #ff6ec4);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+      }
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Typing effect */
+      .typing {
+        border-right: 2px solid #facc15;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 4s steps(30, end), blink 0.7s step-end infinite;
+      }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      /* Card hover glow */
+      .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px #facc15, 0 0 30px #facc15, 0 0 40px #facc15;
+        transition: all 0.4s ease;
+      }
+
+      /* Fade in scroll */
+      .fade-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .fade-scroll.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Neon button hover */
+      .neon-btn {
+        position: relative;
+        z-index: 0;
+        border-radius: 9999px;
+        padding: 0.75rem 2rem;
+        font-weight: bold;
+        color: #facc15;
+        border: 2px solid #facc15;
+        transition: all 0.3s ease;
+      }
+      .neon-btn:hover {
+        color: #111827;
+        background: #facc15;
+        box-shadow: 0 0 10px #facc15, 0 0 20px #facc15, 0 0 30px #facc15;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <!-- Navbar -->
+    <nav
+      class="fixed w-full flex justify-between items-center p-6 bg-gray-800 bg-opacity-80 backdrop-blur-md z-20"
+    >
+      <div class="text-2xl font-bold text-yellow-400">Ananta R.</div>
+      <ul class="flex space-x-6">
+        <li>
+          <a href="#about" class="hover:text-yellow-400 transition">About</a>
+        </li>
+        <li>
+          <a href="#projects" class="hover:text-yellow-400 transition"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="hover:text-yellow-400 transition"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header
+      class="relative h-screen flex flex-col md:flex-row justify-center items-center text-center md:text-left px-6 md:px-20 overflow-hidden"
+    >
+      <!-- Background animasi partikel -->
+      <canvas
+        id="bg-canvas"
+        class="absolute top-0 left-0 w-full h-full z-0"
+      ></canvas>
+
+      <!-- Foto Profil di Kiri -->
+      <div class="mb-6 md:mb-0 md:mr-12 flex-shrink-0 relative z-10">
+        <img
+          src="./img/Me.png"
+          alt="Foto Profil Ananta"
+          class="w-40 h-40 md:w-56 md:h-56 rounded-full border-4 border-yellow-400 object-cover shadow-lg transform transition duration-700 hover:scale-105"
+        />
+      </div>
+
+      <!-- Teks & Tombol di Kanan -->
+      <div
+        class="flex flex-col justify-center items-center md:items-start relative z-10"
+      >
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white">
+          Hi, I'm Ananta
+        </h1>
+        <p
+          class="text-xl md:text-2xl mb-6 text-yellow-400 max-w-md"
+          id="typing-text"
+        ></p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#projects" class="neon-btn text-center"> See My Work </a>
+
+          <a
+            href="./assets/cv/Ananta_R_CV.pdf"
+            target="_blank"
+            class="neon-btn text-center flex items-center justify-center gap-3"
+          >
+            <i class="fa-solid fa-file-pdf"></i>
+            Download CV
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="py-20 px-6 md:px-20 fade-scroll">
+      <h2 class="text-4xl font-bold text-center mb-12 text-yellow-400">
+        About Me
+      </h2>
+      <div class="max-w-3xl mx-auto text-center text-gray-300">
+        <p>
+          I am a passionate software developer specializing in web and IoT
+          solutions. I enjoy building modern, responsive, and interactive
+          applications by combining clean code, smart system design, and
+          cutting-edge technologies to deliver impactful digital experiences.
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="projects" class="py-20 px-6 md:px-20 fade-scroll bg-gray-800">
+      <h2 class="text-4xl font-bold text-center mb-12 text-yellow-400">
+        Experience
+      </h2>
+
+      <div class="max-w-5xl mx-auto space-y-8">
+        <!-- Experience 1 -->
+        <div class="bg-gray-700 rounded-xl p-6 shadow-lg card-hover">
+          <div
+            class="flex flex-col md:flex-row md:justify-between md:items-center mb-2"
+          >
+            <h3 class="text-2xl font-bold text-white">
+              Full Stack IoT & Web Developer
+            </h3>
+            <span class="text-yellow-400 text-sm font-semibold">
+              Nov 2024 – Feb 2025
+            </span>
+          </div>
+          <p class="text-gray-400 italic mb-3">
+            IoT Web Based Air Quality Monitoring Project — Trenggalek, East Java
+          </p>
+          <p class="text-gray-300">
+            Developed an IoT-based air quality monitoring system integrated with
+            a web application, capable of capturing real-time air sensor data
+            and displaying accurate graphs and air quality status for monitoring
+            and analysis.
+          </p>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="bg-gray-700 rounded-xl p-6 shadow-lg card-hover">
+          <div
+            class="flex flex-col md:flex-row md:justify-between md:items-center mb-2"
+          >
+            <h3 class="text-2xl font-bold text-white">Functional Analyst</h3>
+            <span class="text-yellow-400 text-sm font-semibold">
+              Feb 2024 – Mar 2024
+            </span>
+          </div>
+          <p class="text-gray-400 italic mb-3">
+            System Analysis & Use Case Design — Malang, East Java
+          </p>
+          <p class="text-gray-300">
+            Conducted requirement analysis for the Malang Mbois application by
+            creating Use Case Diagrams, Use Case Scenarios, and business process
+            flows, while collaborating with the development team to ensure
+            proper documentation and successful system implementation.
+          </p>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="bg-gray-700 rounded-xl p-6 shadow-lg card-hover">
+          <div
+            class="flex flex-col md:flex-row md:justify-between md:items-center mb-2"
+          >
+            <h3 class="text-2xl font-bold text-white">Web Developer</h3>
+            <span class="text-yellow-400 text-sm font-semibold">
+              Aug 2023 – Dec 2023
+            </span>
+          </div>
+          <p class="text-gray-400 italic mb-3">
+            Independent Study Program – Web Development — Malang, East Java
+          </p>
+          <p class="text-gray-300">
+            Learned and implemented web development using HTML, CSS, JavaScript,
+            PHP, and modern frameworks, while designing web application features
+            based on system requirements, creating use case designs, and
+            collaborating with team members to ensure proper documentation and
+            implementation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="py-20 px-6 md:px-20 fade-scroll bg-gray-800">
+      <h2 class="text-4xl font-bold text-center mb-4 text-yellow-400">
+        Projects
+      </h2>
+
+      <div class="flex justify-center gap-4 mb-12">
+        <button class="filter-btn neon-btn px-6 py-2" data-filter="freelance">
+          Freelance
+        </button>
+        <button class="filter-btn neon-btn px-6 py-2" data-filter="personal">
+          Personal
+        </button>
+      </div>
+
+      <!-- Project Grid (AUTO) -->
+      <div
+        id="projects-container"
+        class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto"
+      ></div>
+    </section>
+
+    <!-- Contact -->
+    <section
+      id="contact"
+      class="py-20 px-6 md:px-20 fade-scroll bg-gradient-to-br from-gray-900 via-gray-800 to-black"
+    >
+      <h2 class="text-4xl font-bold text-center mb-6 text-yellow-400">
+        Contact Me
+      </h2>
+
+      <p class="text-center text-gray-300 mb-10 max-w-xl mx-auto">
+        Interested in working together, collaborating on a project, or
+        discussing web & IoT development ideas? Feel free to reach out through
+        any of the platforms below.
+      </p>
+
+      <!-- Contact Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-6 mb-8">
+        <!-- Email -->
+        <a
+          href="mailto:ananta076238@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Ananta,%0A%0AI%20would%20like%20to%20discuss..."
+          class="neon-btn text-lg px-8 py-4 flex items-center justify-center gap-3"
+        >
+          <i class="fa-solid fa-envelope"></i>
+          <span>Email</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/6287750704842"
+          target="_blank"
+          class="neon-btn text-lg px-8 py-4 flex items-center justify-center gap-3"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+
+        <!-- GitHub -->
+        <a
+          href="https://github.com/AnantaR07"
+          target="_blank"
+          class="neon-btn text-lg px-8 py-4 flex items-center justify-center gap-3"
+        >
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+
+      <p class="text-center text-gray-400 text-sm">
+        or copy my email:
+        <span class="text-yellow-400 font-semibold">
+          ananta076238@gmail.com
+        </span>
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 text-center py-6">
+      &copy; 2025 Ananta R. All Rights Reserved.
+    </footer>
+
+    <script>
+      // -------------------------------
+      // Multi-typing effect
+      // -------------------------------
+      const texts = [
+        "I build amazing web experiences!",
+        "I develop smart IoT solutions!",
+        "I am a Software Developer creating interactive & responsive applications!",
+      ];
+
+      let count = 0,
+        index = 0,
+        currentText = "",
+        letter = "";
+      const typingElement = document.getElementById("typing-text");
+
+      function type() {
+        if (count === texts.length) count = 0;
+        currentText = texts[count];
+        letter = currentText.slice(0, ++index);
+        typingElement.textContent = letter;
+        if (letter.length === currentText.length) {
+          setTimeout(() => {
+            index = 0;
+            count++;
+            typingElement.textContent = "";
+            type();
+          }, 2000);
+        } else {
+          setTimeout(type, 100);
+        }
+      }
+      type();
+
+      const projects = [
+        {
+          img: "./img/DashboardProjek/SatyaDharmaBhakti.jpg",
+          title: "RSUD Satya Dharma Bhakti Air Quality Monitoring System",
+          desc: "An IoT-based system for real-time monitoring of PM2.5, CO, VOC, temperature, and humidity levels.",
+          link: "https://github.com/AnantaR07/AirsenseSatyaDharmaBhakti",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashbaordRSUDTrenggalek.jpg",
+          title: "RSUD Trenggalek Air Quality Monitoring System",
+          desc: "An IoT-based real-time air quality monitoring system integrated with a Telegram bot for alerts and reporting.",
+          link: "https://github.com/AnantaR07/AnantaR07-Pemantauan-Udara-Rumah-Sakit-Dr.Soedarmo-Trenggalek",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardArtosite.jpg",
+          title: "Artosite E-Commerce Website",
+          desc: "An online marketplace that connects artists with art collectors through a digital painting sales platform.",
+          link: "https://github.com/AnantaR07/ArtositeRebuild",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardBatamTour.jpg",
+          title: "Batam Tour Website",
+          desc: "A tourism service website providing complete travel packages for Batam and surrounding areas.",
+          link: "https://github.com/AnantaR07/batamtour",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardCraftyArtisan.jpg",
+          title: "CraftyArtisan Marketplace",
+          desc: "An eco-friendly e-commerce platform for selling recycled art and handmade crafts with a creativity-focused concept.",
+          link: "https://github.com/AnantaR07/Macro-CreaftyArtisan",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardJasaDesain.jpg",
+          title: "Design Services Website",
+          desc: "A professional service website offering logo, poster, packaging, banner, social media, interior, and architectural design services.",
+          link: "https://github.com/AnantaR07/Webdesign",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardKecamatanBintanTimur.jpg",
+          title: "Bintan Timur District Government Website",
+          desc: "A public service website designed to deliver government information, public services, and regional data transparently.",
+          link: "https://github.com/AnantaR07/websitekecamatanbintantimur",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardLeleFeeder.jpg",
+          title: "Smart Fish Feeder Management System",
+          desc: "An innovative IoT-based website for fish farmers to monitor pond locations and automate feeding schedules.",
+          link: "https://github.com/AnantaR07/FishFeeder",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardLocksense.jpg",
+          title: "LockSense Smart Door Security System",
+          desc: "An IoT-based smart lock system secured with RSA cryptography for enhanced room access control.",
+          link: "https://github.com/AnantaR07/LockSense",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardReadroom.jpg",
+          title: "ReadRoom Library Management System",
+          desc: "A web-based system for managing book borrowing and returns in schools, campuses, and public libraries.",
+          link: "https://github.com/AnantaR07/ReadRoom",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardQnine.jpg",
+          title: "Q-Nine Online Food Marketplace",
+          desc: "A digital platform for buying and selling food and beverages from local UMKM partners, restaurants, and producers.",
+          link: "https://github.com/AnantaR07/QNine",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardSecureSense.jpg",
+          title: "SecureSense Warehouse Monitoring System",
+          desc: "An IoT-based temperature and humidity monitoring system for warehouses with real-time alerts when thresholds are exceeded.",
+          link: "https://github.com/AnantaR07/SecureSense",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardTanamanMawar.jpg",
+          title: "Smart Rose Plant Irrigation System",
+          desc: "An IoT-based system for automatic rose plant irrigation and real-time soil moisture monitoring for multiple plants.",
+          link: "https://github.com/AnantaR07/KelembabanMawar",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardTanamanTomanStroberi.jpg",
+          title: "Smart Tomato & Strawberry Farming System",
+          desc: "An IoT-based solution for managing tomato and strawberry plants with customized irrigation based on soil moisture levels.",
+          link: "https://github.com/AnantaR07/KelembabanTomatStrobery",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardTanamanCabai.jpg",
+          title: "Smart Chili Plant Monitoring System",
+          desc: "An IoT-based solution for efficient chili farming with soil moisture monitoring, automated irrigation, and climate tracking.",
+          link: "https://github.com/AnantaR07/KelembabanCabai",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardAirMonitoring.jpg",
+          title: "Air Monitoring IoT Platform",
+          desc: "An IoT solution for monitoring air quality and environmental conditions such as CO, VOC, temperature, and humidity.",
+          link: "https://github.com/AnantaR07/Airsense-React",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardLunas.jpg",
+          title: "LUNAS Smart Game (Respiratory System Ludo)",
+          desc: "An educational Ludo-based game designed to help students learn the human respiratory system interactively.",
+          link: "https://github.com/AnantaR07/Lunas-LudoCerdas",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardSplitease.png",
+          title: "Splitease Expense Sharing App",
+          desc: "A web application that helps users calculate and split expenses efficiently and fairly.",
+          link: "https://github.com/AnantaR07/Splitease",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardRasaTempoDulu.png",
+          title: "Rasa Tempo Dulu Culinary Platform",
+          desc: "A culinary platform showcasing stories, uniqueness, and recommendations for traditional local snacks.",
+          link: "https://github.com/AnantaR07/RasaTempoDulu",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/DashboardGelombangTrenggalekk.png",
+          title: "Gelombang Trenggalek Tourism Website",
+          desc: "A tourism website helping visitors discover the best beach destinations in Trenggalek.",
+          link: "https://github.com/AnantaR07/GelombangTrenggalek",
+          category: "freelance",
+        },
+        {
+          img: "./img/DashboardProjek/NAAsistent.jpg",
+          title: "NAN Assistant AI Chatbot",
+          desc: "An AI-powered chat assistant designed to provide interactive and intelligent responses.",
+          link: "https://github.com/AnantaR07/NAN_Assistant",
+          category: "personal",
+        },
+      ];
+
+      const projectContainer = document.getElementById("projects-container");
+
+      function renderProjects(filter) {
+        projectContainer.innerHTML = "";
+
+        projects
+          .filter((p) => p.category === filter)
+          .forEach((project) => {
+            const card = document.createElement("div");
+            card.className =
+              "bg-gray-700 rounded-xl overflow-hidden shadow-lg card-hover flex flex-col";
+
+            card.innerHTML = `
+        <img src="${project.img}" alt="${project.title}" class="w-full h-48 object-cover">
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-bold mb-2">${project.title}</h3>
+          <p class="text-gray-300 mb-4 flex-grow">${project.desc}</p>
+          <a href="${project.link}" target="_blank"
+            class="text-yellow-400 font-semibold hover:underline mt-auto">
+            View Project →
+          </a>
+        </div>
+      `;
+
+            projectContainer.appendChild(card);
+          });
+      }
+
+      // Default tampil Freelance
+      renderProjects("freelance");
+
+      // Button click
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          renderProjects(btn.dataset.filter);
+        });
+      });
+
+      // -------------------------------
+      // Particle background effect
+      // -------------------------------
+      const canvas = document.getElementById("bg-canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = [];
+      const colors = ["#facc15", "#ffffff", "#ff6ec4", "#42e695"];
+
+      for (let i = 0; i < 100; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 3 + 1,
+          dx: (Math.random() - 0.5) * 1.5,
+          dy: (Math.random() - 0.5) * 1.5,
+          color: colors[Math.floor(Math.random() * colors.length)],
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, false);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.x < 0 || p.x > canvas.width) p.dx = -p.dx;
+          if (p.y < 0 || p.y > canvas.height) p.dy = -p.dy;
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      // Responsif canvas
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+      // Fade scroll effect
+      const faders = document.querySelectorAll(".fade-scroll");
+      const options = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+      faders.forEach((fader) => observer.observe(fader));
+    </script>
+  </body>
+</html>
