@@ -609,6 +609,11 @@
           });
       }
 
+      document.querySelectorAll("#projects.fade-scroll").forEach(el => {
+  el.classList.add("show");
+});
+
+
       document.addEventListener("DOMContentLoaded", () => {
   renderProjects("freelance");
 
