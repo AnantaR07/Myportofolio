@@ -93,6 +93,12 @@
         background: #facc15;
         box-shadow: 0 0 10px #facc15, 0 0 20px #facc15, 0 0 30px #facc15;
       }
+      .filter-btn.active {
+  background: #facc15;
+  color: #111827;
+  box-shadow: 0 0 15px #facc15;
+}
+
     </style>
   </head>
   <body class="bg-gray-900 text-white font-sans">
@@ -259,13 +265,19 @@
         Projects
       </h2>
 
-      <div class="flex justify-center gap-4 mb-12">
-        <button class="filter-btn neon-btn px-6 py-2" data-filter="freelance">
-          Freelance
-        </button>
-        <button class="filter-btn neon-btn px-6 py-2" data-filter="personal">
-          Personal
-        </button>
+<div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+<button
+  class="filter-btn neon-btn px-6 py-2 active"
+  data-filter="freelance"
+>
+  Freelance
+</button>
+<button
+  class="filter-btn neon-btn px-6 py-2"
+  data-filter="personal"
+>
+  Personal
+</button>
       </div>
 
       <!-- Project Grid (AUTO) -->
@@ -547,15 +559,26 @@
           });
       }
 
-      // Default tampil Freelance
-      renderProjects("freelance");
+      document.addEventListener("DOMContentLoaded", () => {
+  renderProjects("freelance");
+
+  document
+    .querySelector('.filter-btn[data-filter="freelance"]')
+    ?.classList.add("active");
+});
 
       // Button click
-      document.querySelectorAll(".filter-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          renderProjects(btn.dataset.filter);
-        });
-      });
+document.querySelectorAll(".filter-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document
+      .querySelectorAll(".filter-btn")
+      .forEach((b) => b.classList.remove("active"));
+
+    btn.classList.add("active");
+    renderProjects(btn.dataset.filter);
+  });
+});
+
 
       // -------------------------------
       // Particle background effect
