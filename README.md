@@ -1,36 +1,104 @@
-# JasCode
+# My Portfolio 💻
 
-**JasCode** is a software development service focused on building websites, applications, IoT systems, and custom software tailored to users' needs.
+Welcome to my personal portfolio website.
 
-## 🚀 Services
+This portfolio showcases my experience, skills, projects, and work in **web development, full-stack development, and IoT system development**.
 
-* 🌐 Website Development
-* 💻 Web Application Development
-* 📱 Mobile Application Development
-* 🤖 IoT & Smart System Development
-* 🗄️ Database & Backend Development
-* 🎨 UI/UX Design
-* ⚙️ Custom Software Development
+## 👨‍💻 About Me
 
-## 🛠️ Technologies
+Hi, I'm **Ananta Romadhan**, a Junior Full Stack Developer and IoT Engineer with an interest in building websites, web applications, software systems, and IoT solutions.
 
-* HTML, CSS, JavaScript
-* PHP & Laravel
+I enjoy turning ideas and requirements into functional, interactive, and user-friendly digital solutions.
+
+## 🚀 Featured Projects
+
+Some of the projects showcased in this portfolio include:
+
+* 💍 **Our Wedding Adventure** — Interactive story-driven wedding invitation with game mechanics.
+* 💡 **Moho Lighting System** — Custom lighting and shadow system for Moho 2D animation.
+* 🌱 **Smart Plant Watering System** — IoT-based automatic plant watering system.
+* 🌫️ **Air Quality Monitoring System** — IoT-based environmental monitoring system.
+* 🐟 **LeleFeeder** — Smart fish feeding system using IoT technology.
+* 🌐 **Web Development Projects** — Various websites and web applications.
+
+## 🛠️ Skills & Technologies
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
 * React.js
-* MySQL
-* Firebase
-* Flutter
-* Arduino / ESP32 / ESP8266
 * Bootstrap
 
-## 📂 Projects
+### Backend
 
-This repository contains various projects developed as part of the **JasCode portfolio and development services**.
+* PHP
+* Laravel
+* MySQL
+* Firebase
 
-Each project is built using different technologies, features, and approaches based on the specific requirements and objectives of the project.
+### Mobile Development
 
-## 📞 Contact
+* Flutter
 
-Looking for a website, application, IoT system, or custom software?
+### IoT & Embedded Systems
 
-Feel free to get in touch to discuss your project requirements and development needs.
+* Arduino
+* ESP32
+* ESP8266
+* Sensors & Actuators
+* IoT System Integration
+
+### Design & Tools
+
+* Figma
+* Git & GitHub
+* XAMPP
+* Microsoft Office
+
+## 📂 Portfolio
+
+The portfolio website provides information about my:
+
+* Profile
+* Skills
+* Experience
+* Education
+* Projects
+* Certificates
+* Contact information
+
+## 🌐 Live Website
+
+You can visit my portfolio website here:
+
+**[My Portfolio](https://anantar07.github.io/Myportofolio/)**
+
+## 📸 Preview
+
+*Add a screenshot of the portfolio website here.*
+
+## 🎯 Purpose
+
+This project was created as a personal portfolio to showcase my development skills, technical experience, and projects.
+
+The portfolio is continuously updated as I learn new technologies and develop new projects.
+
+## 📌 Project Status
+
+**Active / Continuously Updated**
+
+New projects, skills, and improvements may be added over time.
+
+## 👨‍💻 Author
+
+**Ananta Romadhan**
+
+Junior Full Stack Developer | IoT Engineer
+
+GitHub: [AnantaR07](https://github.com/AnantaR07)
+
+## 📄 License
+
+This project is created for personal portfolio and educational purposes.
