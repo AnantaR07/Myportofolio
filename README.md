@@ -1,6 +1,8 @@
-JasCode is a software development service focused on building websites, applications, IoT systems, and custom software tailored to users needs.
+# JasCode
 
-🚀 Services
+**JasCode** is a software development service focused on building websites, applications, IoT systems, and custom software tailored to users' needs.
+
+## 🚀 Services
 
 * 🌐 Website Development
 * 💻 Web Application Development
@@ -10,7 +12,7 @@ JasCode is a software development service focused on building websites, applicat
 * 🎨 UI/UX Design
 * ⚙️ Custom Software Development
 
-🛠️ Technologies
+## 🛠️ Technologies
 
 * HTML, CSS, JavaScript
 * PHP & Laravel
@@ -21,13 +23,13 @@ JasCode is a software development service focused on building websites, applicat
 * Arduino / ESP32 / ESP8266
 * Bootstrap
 
-📂 Projects
+## 📂 Projects
 
 This repository contains various projects developed as part of the **JasCode portfolio and development services**.
 
 Each project is built using different technologies, features, and approaches based on the specific requirements and objectives of the project.
 
-📞 Contact
+## 📞 Contact
 
 Looking for a website, application, IoT system, or custom software?
 
